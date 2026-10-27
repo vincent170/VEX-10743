@@ -193,4 +193,6 @@ void opcontrol() {
     claw_opcontrol();  // R1 = close, R2 = open
 
     pros::delay(ez::util::DELAY_TIME);  // 10ms DONT CHANGE
+  }
 }
+
