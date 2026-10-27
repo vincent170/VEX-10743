@@ -15,8 +15,8 @@ DRIVETRAIN:
 EZ handles driving, turning, joystick ctrl, odom but requires:
 */
 ez::Drive chassis(
-    {-1, 2},  // left motors (- = backward), and 1st port is where distance is read
-    {-3, 4},    // right motors (+ = fwd), same as left motors stuff
+    {1, 2},  // left motors (- = backward), and 1st port is where distance is read
+    {3, 4},    // right motors (+ = fwd), same as left motors stuff
     5,         // IMU port (change)
     3.25,      // wheel diameter
     360);      // wheel rpm = cartridge rpm x 36 / 60 as 600rpm cartridges used
@@ -179,9 +179,8 @@ void opcontrol() {
   while (true) {
     ez_template_extras();  // PID tuner (X) + test auton (B+DOWN)
 
-    chassis.opcontrol_tank();  // tank drive: left stick = left side, right stick = right side
+    chassis.opcontrol_arcade_standard(ez::SPLIT);  // left stick fwd/back and right stick turn
     /* want arcade? delete the line above and use one of these:
-       chassis.opcontrol_arcade_standard(ez::SPLIT); // left stick fwd/back, right stick turn
        chassis.opcontrol_arcade_standard(ez::SINGLE); // one stick does everything
      */
 
