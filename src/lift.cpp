@@ -41,25 +41,16 @@ void lift_init() { // setup, called from initalize()
 
   lift_target_set(LIFT_MIN);  // start by holding the arm down
 }
+/*
+The driver buttons (MACRO)
+where:
+L1 = up 1, L2 = down 1, UP = to bottom
 
-// -----------------------------------------------------------------------------
-//  lift_opcontrol - the driver buttons (THE MACROS)
-// -----------------------------------------------------------------------------
-//   L1 = up one step   (+LIFT_STEP degrees)
-//   L2 = down one step (-LIFT_STEP degrees)
-//   UP = straight to the bottom
-//
-//  get_digital_new_press vs get_digital - IMPORTANT:
-//   opcontrol loops ~100 times a second.
-//   get_digital(L1)           = true EVERY loop you hold L1. hold it for half
-//                               a second = 50 steps = arm flies to the top
-//   get_digital_new_press(L1) = true ONLY on the first loop of a press.
-//                               one press = one step. thats what we want
-//
-//  we add to target_get() (where the arm is GOING) not lift_position()
-//  (where it IS). so 3 quick presses = target goes 20, 40, 60 even if the
-//  arm hasnt caught up yet. feels way better to drive
-// -----------------------------------------------------------------------------
+get_digital (L1) -> true EVERY loop you hold L1 (so if 1s like 50steps)
+get_digital_new_press (L1) -> true ONLY on first loop of press so only one step when 1 press
+
+added to target_get() when arm is GOING not lift_position() where it IS. so you can add presses for one target 
+*/
 void lift_opcontrol() {
   // the EZ PID tuner (press X) uses the arrow buttons to move around its menu.
   // without this line, pressing UP in the tuner would ALSO drop the arm.
