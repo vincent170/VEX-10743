@@ -15,9 +15,9 @@ DRIVETRAIN:
 EZ handles driving, turning, joystick ctrl, odom but requires:
 */
 ez::Drive chassis(
-    {-1, -2},  // left motors (- = backward), and 1st port is where distance is read
-    {3, 4},    // right motors (+ = fwd), same as left motors stuff
-    5,         // IMU port (change)
+    {-12, -11},  // left motors (- = backward), and 1st port is where distance is read
+    {2, 1},    // right motors (+ = fwd), same as left motors stuff
+    21,         // IMU port (change)
     3.25,      // wheel diameter
     360);      // wheel rpm = cartridge rpm x 36 / 60 as 600rpm cartridges used
 

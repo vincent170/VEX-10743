@@ -26,10 +26,10 @@ If it returns false or dosent change:
 
 
 // PORTS
-inline pros::Distance dist_front(11);
-inline pros::Distance dist_back(12);
-inline pros::Distance dist_left(13);
-inline pros::Distance dist_right(14);
+inline pros::Distance dist_front(15);
+inline pros::Distance dist_back(20);
+inline pros::Distance dist_left(16);
+inline pros::Distance dist_right(6);
 
 /*
 From the center of the robot to the front of each sensor ('face'), the sensor measures to wall but odom tracks robot center 

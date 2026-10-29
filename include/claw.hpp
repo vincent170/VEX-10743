@@ -11,7 +11,7 @@ Used the ez intake tut and subsystem best practices to make ts
 */
 
 // CHANGE port. if R1 opens claw instead of closing it, make this -6
-inline pros::Motor claw(6);
+inline pros::Motor claw(5);
 
 // how hard the claw squeezes out of 127. change based on strength
 inline const int CLAW_SPEED = 127;

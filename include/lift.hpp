@@ -19,10 +19,10 @@ NOTE: ARM HAS TO BE ALL THE WAY DOWN WHEN ROBOT IS TURNED ON AS SENSOR IS SET TO
 */
 
 
-// PORTS
-inline pros::Motor lift_left(-7, pros::v5::MotorGears::green);  // green = 200rpm cartridge
-inline pros::Motor lift_right(8, pros::v5::MotorGears::green);  // (telling PROS the cartridge makes its speed readings correct)
-inline pros::Rotation lift_rotation(9);  // if the number goes down when the arm goes up make ts -9
+// PORTS)
+inline pros::Motor lift_left(-3, pros::v5::MotorGears::green);  // green = 200rpm cartridge
+inline pros::Motor lift_right(13, pros::v5::MotorGears::green);  // (telling PROS the cartridge makes its speed readings correct)
+inline pros::Rotation lift_rotation(4);  // if the number goes down when the arm goes up make ts -9
 
 // ROTATION SENSOR LOCATION
 // on 48t axle: 1.0, on 12t axle: 4.0. lift_position() divices by this so the heights below are always degrees of 48t
