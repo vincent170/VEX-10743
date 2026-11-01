@@ -26,7 +26,7 @@ inline pros::Rotation lift_rotation(4);  // if the number goes down when the arm
 
 // ROTATION SENSOR LOCATION
 // on 48t axle: 1.0, on 12t axle: 4.0. lift_position() divices by this so the heights below are always degrees of 48t
-inline const double LIFT_SENSOR_RATIO = 1.0;
+inline const double LIFT_SENSOR_RATIO = 4.0;
 
 // HEIGHTS (degrees of 48t)
 inline const double LIFT_MIN = 0.0;    // all the way down, where the sensor gets zeroed
