@@ -7,6 +7,8 @@
 LIFT
 - 2x 11w motors w/ 200rpm (green) cartridges with 12t:48t where 12t is axle and a rotational sensor to measure arm angle
 
+Update -> it is now changed to 100rpm red cartriges
+
 How it works:
 Since the 12t has to go around 4x to turn 48t once, the 48t goes 4x slower than motors but w/ 4x torque.
 
@@ -20,8 +22,8 @@ NOTE: ARM HAS TO BE ALL THE WAY DOWN WHEN ROBOT IS TURNED ON AS SENSOR IS SET TO
 
 
 // PORTS)
-inline pros::Motor lift_left(-3, pros::v5::MotorGears::green);  // green = 200rpm cartridge
-inline pros::Motor lift_right(13, pros::v5::MotorGears::green);  // (telling PROS the cartridge makes its speed readings correct)
+inline pros::Motor lift_left(-3, pros::v5::MotorGears::red);  // green = 200rpm cartridge. NOW IT'S ON RED, 100RPM
+inline pros::Motor lift_right(13, pros::v5::MotorGears::red);  // (telling PROS the cartridge makes its speed readings correct)
 inline pros::Rotation lift_rotation(4);  // if the number goes down when the arm goes up make ts -9
 
 // ROTATION SENSOR LOCATION
@@ -31,7 +33,7 @@ inline const double LIFT_SENSOR_RATIO = 4.0;
 // HEIGHTS (degrees of 48t)
 inline const double LIFT_MIN = 0.0;    // all the way down, where the sensor gets zeroed
 inline const double LIFT_MAX = 120.0;  // highest the arm can go, measure
-inline const double LIFT_STEP = 20.0;  // how far one L1/L2 button presses <- MEASURE
+inline const double LIFT_STEP = 12.0;  // how far one L1/L2 button presses <- MEASURE
 
 // SAFETY MARGIN
 // if the sensor reads more than this outside min, max or if smth is wrong, anything below margin is stopped.
